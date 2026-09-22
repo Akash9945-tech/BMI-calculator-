@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BMI Reading</title>
+<link rel="stylesheet" href="project6.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="sheet">
+  <div class="masthead">
+    <h1>BMI Reading</h1>
+    <span class="ref">kg/m&sup2;</span>
+  </div>
+  <p class="subline">Enter height and weight for a single-point body mass index reading and its WHO classification band.</p>
+
+  <div class="unit-toggle" role="group" aria-label="Unit system">
+    <button type="button" id="unit-metric" class="active">METRIC</button>
+    <button type="button" id="unit-imperial">IMPERIAL</button>
+  </div>
+
+  <form id="bmi-form" novalidate>
+    <div class="field" id="height-field">
+      <div class="field-row">
+        <label for="height">Height</label>
+        <span class="field-error" id="height-error"></span>
+      </div>
+      <div class="dual-input" id="height-inputs">
+      </div>
+    </div>
+
+    <div class="field" id="weight-field">
+      <div class="field-row">
+        <label for="weight">Weight</label>
+        <span class="field-error" id="weight-error"></span>
+      </div>
+      <div class="input-line" id="weight-line">
+        <input type="number" id="weight" inputmode="decimal" placeholder="0" step="0.1">
+        <span class="unit-label" id="weight-unit">kg</span>
+      </div>
+    </div>
+
+    <button type="submit" class="submit">CALCULATE</button>
+  </form>
+
+  <div class="result" id="result">
+    <div class="result-top">
+      <div class="bmi-figure" id="bmi-value">—</div>
+      <div class="bmi-meta">
+        <span class="kg-m2">kg/m&sup2;</span>
+        <span class="category-tag" id="category-tag">—</span>
+      </div>
+    </div>
+
+    <div class="scale">
+      <div class="scale-track">
+        <div class="scale-marker" id="scale-marker" style="left: 0%;"></div>
+      </div>
+      <div class="scale-labels">
+        <span>15</span>
+        <span>18.5</span>
+        <span>25</span>
+        <span>30</span>
+        <span>40+</span>
+      </div>
+    </div>
+
+    <p class="note" id="result-note"></p>
+  </div>
+
+  <footer>WHO ADULT BMI CLASSIFICATION · NOT A DIAGNOSTIC TOOL</footer>
+</div>
+
+
+</body>
+</html>
